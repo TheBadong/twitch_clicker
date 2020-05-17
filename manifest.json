@@ -1,0 +1,13 @@
+{
+    "name": "twitch_clicker",
+    "version": "1.0",
+    "description": "When you're lazy on twitch but want those sweet channel points",
+    "permissions": ["declarativeContent", "storage"],
+    "content_scripts": [
+        {
+          "matches": ["https://www.twitch.tv/*"],
+          "js": ["contentScript.js"]
+        }
+    ],
+    "manifest_version": 2
+}
