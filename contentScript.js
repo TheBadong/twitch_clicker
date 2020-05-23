@@ -9,12 +9,7 @@ window.onload = () => {
     }
 
     // Create an observer instance linked to the callback function
-    const observer = new MutationObserver(callback);
-    
-    // Start observing the target node for configured mutations
-    observer.observe(targetNode, config);
-    
-    const callback = function(mutationsList, observer) {
+    const observer = new MutationObserver((mutationsList, observer) => {
         // Use traditional 'for loops' for IE 11
         for(let mutation of mutationsList) {
             if (mutation.type === 'childList') {
@@ -27,6 +22,10 @@ window.onload = () => {
                 }
             }
         }
-    };
+    });
+    
+    // Start observing the target node for configured mutations
+    observer.observe(targetNode, config);
+    
 
 };
